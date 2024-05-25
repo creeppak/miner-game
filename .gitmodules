@@ -1,0 +1,4 @@
+[submodule "web3.unity"]
+	path = web3.unity
+	url = https://github.com/kalambet/web3.unity.git
+	branch = ethbergit lin04
