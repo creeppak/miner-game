@@ -2,5 +2,6 @@
 {
     None,
     Axe,
-    Pickaxe
+    Pickaxe,
+    Bucket,
 }

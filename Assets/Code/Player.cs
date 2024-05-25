@@ -1,11 +1,13 @@
 ﻿using System;
-using DefaultNamespace;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
     public float actionTime = .5f;
     public PlayerTools tools;
+    public PlayerResources resources;
+    public float hitInTime = 0.33f;
+    public float hitOutTime = 0.66f;
     
     private int rotation;
     private Vector2Int position;
@@ -59,6 +61,13 @@ public class Player : MonoBehaviour
         if (!activeState.AllowInput) return;
         
         SetState(new RotatePlayerState(direction));
+    }
+
+    public void Hit()
+    {
+        if (!activeState.AllowInput) return;
+        
+        SetState(new HitPlayerState());
     }
 
     private Quaternion CalcRotation(int blockRotation)
@@ -173,6 +182,59 @@ public class Player : MonoBehaviour
             if (t == 1f)
             {
                 Player.rotation += direction;
+                Player.SetState(new IdlePlayerState());
+            }
+        }
+    }
+
+    public class HitPlayerState : PlayerState
+    {
+        private float startTime;
+        private Block blockToHit;
+
+        public override void OnEnter()
+        {
+            startTime = Time.time;
+            
+            blockToHit = BlocksMap.Instance.GetBlock(Player.position + Player.LookDirection);
+            
+            if (blockToHit == null)
+            {
+                Player.SetState(new IdlePlayerState());
+                return;
+            }
+        }
+
+        public override void Update()
+        {
+            var t = Mathf.Clamp01((Time.time - startTime) / (Player.actionTime * Player.hitInTime));
+            Player.tools.SetToolHitTime(t);
+
+            if (t == 1f)
+            {
+                blockToHit.OnHit(Player.resources);
+                Player.SetState(new UnhitPlayerState());
+            }
+        }
+    }
+
+    public class UnhitPlayerState : PlayerState
+    {
+        // public override bool AllowInput => true;
+        private float startTime;
+
+        public override void OnEnter()
+        {
+            startTime = Time.time;
+        }
+
+        public override void Update()
+        {
+            var t = Mathf.Clamp01((Time.time - startTime) / (Player.actionTime * Player.hitOutTime));
+            Player.tools.SetToolHitTime(1f - t);
+
+            if (t == 1f)
+            {
                 Player.SetState(new IdlePlayerState());
             }
         }

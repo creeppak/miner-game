@@ -1,6 +1,4 @@
-﻿
-using DefaultNamespace;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class WoodBlock : Block
 {

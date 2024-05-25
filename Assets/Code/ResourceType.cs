@@ -1,9 +1,6 @@
-﻿namespace DefaultNamespace
+﻿public enum ResourceType
 {
-    public enum ResourceType
-    {
-        Wood,
-        Rock,
-        Crystals,
-    }
+    Wood,
+    Rock,
+    Crystals,
 }
