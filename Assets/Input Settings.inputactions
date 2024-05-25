@@ -1,0 +1,122 @@
+{
+    "name": "Input Settings",
+    "maps": [
+        {
+            "name": "player-movement",
+            "id": "ae0416b6-3c40-4104-a09b-412df9f2371f",
+            "actions": [
+                {
+                    "name": "move-forward",
+                    "type": "Button",
+                    "id": "0f414e55-b042-4513-a29f-14a68fe0c152",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "move-backward",
+                    "type": "Button",
+                    "id": "0c8ef58d-66ba-4232-bc5d-6422863002dd",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "rotate-left",
+                    "type": "Button",
+                    "id": "4ae9e4fa-b201-41f0-86c4-7aebca94fbd1",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "rotate-right",
+                    "type": "Button",
+                    "id": "8c3b8a4c-c770-4e2a-a3af-2f430dd8b287",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "720efde9-f86e-4b36-afd0-639bc6a915de",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "move-forward",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "559a3505-ca56-4d26-aac1-2ee6f82c84df",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "move-backward",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "242c1a50-1e6b-460f-9b2b-5f1f78fd1036",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "rotate-left",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b4e552c2-5804-41bb-99ff-956f00b41c8e",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "rotate-right",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "player-actions",
+            "id": "307d622a-a26a-4519-b025-99a214f50d30",
+            "actions": [
+                {
+                    "name": "hit",
+                    "type": "Button",
+                    "id": "1086cfae-9569-4aee-83f7-fe0e8abafe61",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "7b0fba74-1b6d-41a0-8df2-fc45ea539b59",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "hit",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
